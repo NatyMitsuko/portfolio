@@ -1,0 +1,884 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natália Mitsuko - UX/UI Designer</title>
+    <style>
+        :root {
+            --primary: #ff00ff;
+            --primary-light: #c639ff;
+            --secondary: #00e5ff;
+            --dark: #0a0a14;
+            --light: #ffffff;
+            --gray: #9b9bb0;
+            --success: #28A745;
+            --gradient: linear-gradient(135deg, #ff00ff, #893cff);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 229, 255, 0.1) 0%, transparent 20%),
+                linear-gradient(rgba(10, 10, 20, 0.97), rgba(10, 10, 20, 0.97)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235c2a9d' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            overflow-x: hidden;
+            padding: 0 5%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* Background Stars */
+        .background-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -5;
+            pointer-events: none;
+        }
+        
+        .background-star {
+            position: absolute;
+            color: var(--primary-light);
+            opacity: 0.3;
+            animation: twinkle 4s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.4; }
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-light);
+        }
+        
+        /* Hero section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80vh;
+            padding: 2rem 0 5rem;
+            position: relative;
+        }
+        
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--light);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 5px 15px rgba(198, 57, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid var(--primary-light);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(198, 57, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(198, 57, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .hero-image {
+            flex: 0 0 40%;
+            position: relative;
+        }
+        
+        .hero-img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+            border: 3px solid transparent;
+            background: linear-gradient(var(--dark), var(--dark)) padding-box,
+                        var(--gradient) border-box;
+        }
+        
+        .hero-img-bg {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 300px;
+            height: 400px;
+            background: var(--gradient);
+            border-radius: 30px;
+            filter: blur(15px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        /* Decorative elements */
+        .star {
+            position: absolute;
+            color: var(--primary-light);
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .star-sm {
+            font-size: 0.8rem;
+        }
+        
+        .star-md {
+            font-size: 1.2rem;
+        }
+        
+        .star-lg {
+            font-size: 1.8rem;
+        }
+        
+        /* Section title styling */
+        /* Section styles */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+            width: 100%;
+        }
+        
+        .section-header {
+            margin-bottom: 2rem;
+            position: relative;
+            width: 100%;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+            text-align: left;
+            width: 100%;
+            border-bottom: none; /* Garantir que não haja borda aqui */
+        }
+        
+        .section-title-line {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            margin-bottom: 2rem; /* Espaço após a linha */
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient);
+            margin-top: 0.5rem;
+        }
+        
+        /* Portfolio section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: rgba(10, 10, 14, 0.8);
+            margin: 0;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(198, 57, 255, 0.3);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .portfolio-content {
+            padding: 1.2rem;
+        }
+        
+        .portfolio-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+            color: var(--light);
+        }
+        
+        .portfolio-category {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            margin-bottom: 0.4rem;
+        }
+        
+        .portfolio-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* About section */
+        .about-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-desc {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Skills list style */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .skill-check {
+            color: var(--primary-light);
+            font-size: 1.2rem;
+        }
+        
+        .skill-name {
+            font-size: 1rem;
+            color: var(--light);
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Education section styles */
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+        
+        .education-item {
+            background-color: rgba(15, 15, 25, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            border-left: 3px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .education-title {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-details {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Tools section */
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tool-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(198, 57, 255, 0.2);
+        }
+        
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--primary-light);
+        }
+        
+        .tool-name {
+            font-size: 1rem;
+        }
+        
+        /* Experience section */
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .experience-item {
+            display: flex;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding-right: 2rem;
+        }
+        
+        .experience-media {
+            flex: 0 0 250px;
+        }
+        
+        .experience-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .experience-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        .experience-date {
+            display: inline-block;
+            background: rgba(198, 57, 255, 0.1);
+            color: var(--primary-light);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+        
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+        
+        .experience-desc {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Contact section */
+        .contact-container {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            gap: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(198, 57, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-light);
+        }
+        
+        .contact-value {
+            font-size: 1.1rem;
+            color: var(--light);
+        }
+        
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(198, 57, 255, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem 0;
+            margin-top: 5rem;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: a3rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .experience-item {
+                flex-direction: column;
+                padding-right: 0;
+            }
+            
+            .experience-media {
+                flex: 0 0 200px;
+                width: 100%;
+            }
+            
+            .experience-content {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .tools-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+        }
+        
+        @media (min-width: 601px) and (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Stars -->
+    <div class="background-stars">
+        <!-- Row 1 -->
+        <div class="background-star" style="top: 5%; left: 10%; font-size: 0.6rem;">✦</div>
+        <div class="background-star" style="top: 8%; left: 25%; font-size: 0.8rem;">✦</div>
+        <div class="background-star" style="top: 12%; left: 40%; font-size: 0.5rem;">✦</div>
+        <div class="background-star" style="top: 7%; left: 60%; font-size: 0.9rem;">✦</div>
+        <div class="background-star" style="top: 15%; left: 80%; font-size: 0.7rem;">✦</div>
+        <div class="background-star" style="top: 20%; left: 90%; font-size: 0.6rem;">✦</div>
+        
+        <!-- Row 2 -->
+        <div class="background-star" style="top: 25%; left: 5%; font-size: 0.7rem;">✦</div>
+        <div class="background-star" style="top: 30%; left: 15%; font-size: 0.5rem;">✦</div>
+        <div class="background-star" style="top: 28%; left: 35%; font-size: 0.8rem;">✦</div>
+        <div class="background-star" style="top: 32%; left: 55%; font-size: 0.6rem;">✦</div>
+        <div class="background-star" style="top: 27%; left: 75%; font-size: 0.9rem;">✦</div>
+        <div class="background-star" style="top: 35%; left: 95%; font-size: 0.5rem;">✦</div>
+        
+        <!-- Row 3 -->
+        <div class="background-star" style="top: 45%; left: 8%; font-size: 0.6rem;">✦</div>
+        <div class="background-star" style="top: 50%; left: 20%; font-size: 0.9rem;">✦</div>
+        <div class="background-star" style="top: 48%; left: 38%; font-size: 0.5rem;">✦</div>
+        <div class="background-star" style="top: 52%; left: 65%; font-size: 0.7rem;">✦</div>
+        <div class="background-star" style="top: 47%; left: 85%; font-size: 0.8rem;">✦</div>
+        
+        <!-- Row 4 -->
+        <div class="background-star" style="top: 65%; left: 12%; font-size: 0.8rem;">✦</div>
+        <div class="background-star" style="top: 70%; left: 30%; font-size: 0.6rem;">✦</div>
+        <div class="background-star" style="top: 68%; left: 50%; font-size: 0.7rem;">✦</div>
+        <div class="background-star" style="top: 72%; left: 70%; font-size: 0.5rem;">✦</div>
+        <div class="background-star" style="top: 67%; left: 88%; font-size: 0.9rem;">✦</div>
+        
+        <!-- Row 5 -->
+        <div class="background-star" style="top: 85%; left: 7%; font-size: 0.7rem;">✦</div>
+        <div class="background-star" style="top: 90%; left: 22%; font-size: 0.5rem;">✦</div>
+        <div class="background-star" style="top: 88%; left: 45%; font-size: 0.8rem;">✦</div>
+        <div class="background-star" style="top: 92%; left: 62%; font-size: 0.6rem;">✦</div>
+        <div class="background-star" style="top: 87%; left: 82%; font-size: 0.9rem;">✦</div>
+        <div class="background-star" style="top: 95%; left: 93%; font-size: 0.7rem;">✦</div>
+    </div>
+    
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-logo">NM.</div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm Natália Mitsuko</h1>
+                <h2 class="hero-subtitle">UX/UI Designer</h2>
+                <p class="hero-text">With a background in Psychology and expertise in user experience, I create intuitive and accessible digital solutions that balance business goals with human needs.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">See My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img-bg"></div>
+                <img src="/api/placeholder/400/400" alt="Natália Mitsuko" class="hero-img">
+            </div>
+            
+            <!-- Decorative stars -->
+            <div class="star star-lg" style="top: 15%; right: 10%;">✦</div>
+            <div class="star star-md" style="bottom: 20%; left: 5%;">✦</div>
+            <div class="star star-sm" style="top: 30%; left: 20%;">✦</div>
+        </section>
+        
+        <section class="section" id="portfolio" style="padding-top: 3rem;">
+            <div class="section-header">
+                <h2 class="section-title">PORTFOLIO</h2>
+                <!-- Single line below title -->
+                <div class="section-title-line"></div>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="Diapets" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Diapets</h3>
+                        <p class="portfolio-category">Mobile App</p>
+                        <p class="portfolio-desc">App for insulin administration in pets</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="Spoilers" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Spoilers</h3>
+                        <p class="portfolio-category">Mobile App</p>
+                        <p class="portfolio-desc">Karaoke Bar App</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="Contas do Casal" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Contas do Casal</h3>
+                        <p class="portfolio-category">Mobile App</p>
+                        <p class="portfolio-desc">Couple's financial management app</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="My Food" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">My Food</h3>
+                        <p class="portfolio-category">Mobile App</p>
+                        <p class="portfolio-desc">Pantry management app</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT ME</h2>
+                <!-- Single line below title -->
+                <div class="section-title-line"></div>
+            </div>
+            
+            <!-- Decorative star -->
+            <div class="star star-lg" style="top: 10%; right: 5%;">✦</div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-desc">I'm Natália Mitsuko, a UX/UI Designer from Maceió, Brazil with 4+ years of experience. My background in Psychology enhances my understanding of human behavior and digital interactions. With an MBA in UX Design and professional expertise since mid-2021, I specialize in user research, analysis, prototyping, and usability testing.</p>
+                    <p class="about-desc">Proficient in Figma and design collaboration tools, I excel at translating complex user needs into intuitive interfaces. My passion lies in creating accessible digital experiences that solve real user problems while driving business goals forward.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">MY SKILLS</h2>
+                <!-- Single line below title -->
+                <div class="section-title-line"></div>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Design thinking</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Research</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">UX Mappings</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Design Systems</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Wireframing</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Wireflow</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Prototyping</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">Userflow</h3>
+                </div>
+                
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <h3 class="skill-name">User Testing</h3>
+                </div>
+            </div>
+        </section>
+        <!-- Education Section -->
+        <section class="section" id="education">
+            <div class="section-header">
+                <h2 class="section-title">EDUCATION</h2>
+                <!-- Single line below title -->
+                <div class="section-title-line"></div>
+            </div>
+            
+            <div class="education-container">
+                <div class="education-item">
+                    <h3 class="education-title">MBA UX Design & User Research</h3>
+                    <p class="education-details">Leandro Rezende / Unifast (2022-2024)</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="education-title">UX Unicórnio Program (Course)</h3>
+                    <p class="education-details">Leandro Rezende (2023 - Now)</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="education-title">UI Design with Visual References</h3>
+                    <p class="education-details">Udemy (2021)</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="education-title">Figma: Collaborative Design</h3>
+                    <p class="education-details">Udemy (2021)</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="education-title">Psychology Bachelor's Degree</h3>
+                    <p class="education-details">UNIT - AL (2016-2020)</p>
+                </div>
+            </div>
+        </section><!DOCTYPE html>
+
+        <!-- Tools Section -->
+        <section class="section" id="tools">
+            <div class="section-header" style="text-align: left; width: 100%;">
+                <h2 class="section-title" style="text-align: left; width: 100%;">TOOLS I USE</h2>
+            </div>
+            
+            <div class="tools-container">
+                <div class="tool-item">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5,2C6.567,2,5,3.567,5,5.5C5,7.433,6.567,9,8.5,9H11V5.5C11,3.567,9.433,2,7.5,2H8.5Z" fill="#ff00ff"/>
+                            <path d="M11,9H8.5C6.567,9,5,10.567,5,12

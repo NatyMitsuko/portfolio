@@ -56,6 +56,7 @@ h3 {
 
 p {
     margin-bottom: 20px;
+    color: #9B9BB0;
 }
 
 a {
@@ -155,19 +156,56 @@ nav ul li a:hover {
     font-size: 24px;
     max-width: 685px;
     margin-bottom: 40px;
+    color: #9B9BB0;
 }
 
 .hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 632px;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, rgba(138, 43, 226, 0.1) 70%, transparent 100%);
+    border-radius: 1000px;
+    filter: blur(20px);
+    z-index: 0;
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(244, 5, 255, 0.2);
+    width: 360px;
+    height: 592px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-photo {
+    border-radius: 1000px;
+    border: 2px solid var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.profile-photo::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    background: transparent;
+    border-radius: 1000px;
+    z-index: -1;
+    border: 2px dashed var(--primary-color);
+    opacity: 0.7;
 }
 
 .social-icons {
@@ -210,6 +248,7 @@ nav ul li a:hover {
 .about-content p {
     max-width: 800px;
     margin-bottom: 40px;
+    color: #9B9BB0;
 }
 
 .resume-button {
@@ -427,6 +466,7 @@ nav ul li a:hover {
     
     .hero-content p {
         font-size: 20px;
+        color: #9B9BB0;
     }
     
     .skills-grid {
@@ -472,6 +512,16 @@ nav ul li a:hover {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    
+    .hero-image img {
+        width: 300px;
+        height: 493px;
+    }
+    
+    .hero-image::after {
+        width: 320px;
+        height: 520px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -498,6 +548,16 @@ nav ul li a:hover {
     
     .company-logo {
         margin-bottom: 20px;
+    }
+    
+    .hero-image img {
+        width: 250px;
+        height: 410px;
+    }
+    
+    .hero-image::after {
+        width: 270px;
+        height: 440px;
     }
 }
 
