@@ -1,11 +1,12 @@
 /* Estilos Base */
 :root {
-    --primary-color: #F400FF;
-    --primary-color-dark: #C639FF;
-    --text-color: #9B9BB0;
-    --dark-bg: #0A0A14;
+    /* Using variables from index.html instead */
+    --primary-color: var(--primary);
+    --primary-color-dark: var(--primary-light);
+    --text-color: var(--gray);
+    --dark-bg: var(--dark);
     --dark-bg-light: #1A1A24;
-    --white: #FFFFFF;
+    --white: var(--light);
     --container-width: 1200px;
 }
 
@@ -20,7 +21,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--dark-bg);
+    /* Background styles removed - now using styles from index.html */
     overflow-x: hidden;
 }
 
@@ -133,7 +134,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     padding: 180px 0 100px;
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.08) 0%, transparent 70%);
+    /* Background image removed - using styles from index.html */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -176,7 +177,6 @@ nav ul li a:hover {
 
 /* About Section */
 .about {
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.08) 0%, transparent 70%);
 }
 
 .about-content {
@@ -286,7 +286,7 @@ nav ul li a:hover {
 
 /* Experience Section */
 .experience {
-    background-color: var(--dark-bg);
+    /* background-color: var(--dark-bg); - removido para usar o fundo padrão da página */
 }
 
 .experience-grid {
@@ -328,7 +328,7 @@ nav ul li a:hover {
 
 /* Projects Section */
 .projects {
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.08) 0%, transparent 70%);
+    /* Background image removed - using styles from index.html */
 }
 
 .projects-grid {
@@ -361,7 +361,7 @@ nav ul li a:hover {
 
 /* Contact Section */
 .contact {
-    background-color: var(--dark-bg);
+    /* background-color: var(--dark-bg); - removido para usar o fundo padrão da página */
     text-align: center;
 }
 
