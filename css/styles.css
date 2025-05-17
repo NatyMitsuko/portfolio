@@ -194,18 +194,17 @@ nav ul li a:hover {
     z-index: 1;
 }
 
-.profile-photo::before {
-    content: '';
+/* Adicionando as estrelas decorativas */
+
+
+.dashed-rectangle::after {
+    content: '✦';
     position: absolute;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    top: -2px;
-    left: -2px;
-    background: transparent;
-    border-radius: 1000px;
-    z-index: -1;
-    border: 2px dashed var(--primary-color);
-    opacity: 0.7;
+    bottom: -20px;
+    right: -20px;
+    font-size: 40px;
+    color: var(--primary-color);
+    z-index: 2;
 }
 
 .social-icons {
