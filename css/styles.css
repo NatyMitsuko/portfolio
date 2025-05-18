@@ -67,7 +67,7 @@ h3 {
 }
 
 .experience-title {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 10px;
     color: var(--primary-color);
 }
@@ -455,44 +455,170 @@ nav ul li a:hover {
 
 /* Experience Section */
 .experience {
-    /* background-color: var(--dark-bg); - removido para usar o fundo padrão da página */
+    padding: 120px 0;
+}
+
+.experience h2 {
+    margin-bottom: 60px;
+    text-align: left;
 }
 
 .experience-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
 }
 
-.experience-item {
+.experience-card {
+    background-color: rgba(26, 26, 36, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(244, 5, 255, 0.15);
+}
+
+.experience-header {
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.15) 0%, rgba(138, 43, 226, 0.1) 100%);
+    padding: 12px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.experience-header .experience-title {
+    color: var(--primary);
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+}
+
+.experience-body {
     display: flex;
-    gap: 30px;
-    background-color: var(--dark-bg-light);
+    padding: 0;
+}
+
+.company-logo-container {
+    flex: 0 0 500px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(10, 10, 20, 0.5);
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 400px;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
 }
 
-.company-logo {
-    width: 80px;
-    height: 80px;
-    background-color: var(--dark-bg);
-    border-radius: 8px;
-    flex-shrink: 0;
+.experience-card:hover .company-logo-img {
+    transform: scale(1.05);
 }
 
-.experience-content {
+.experience-details {
     flex: 1;
+    padding: 30px;
 }
 
 .job-title {
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-bottom: 20px;
+    color: var(--primary-light);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
-.job-description {
-    white-space: pre-line;
+.job-period {
+    color: var(--gray);
+    font-size: 16px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.job-responsibilities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-responsibilities li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.job-responsibilities li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Media queries for experience section */
+@media (max-width: 992px) {
+    .experience-body {
+        flex-direction: column;
+    }
+    
+    .company-logo-container {
+        flex: 0 0 auto;
+        width: 100%;
+        max-height: 300px;
+    }
+    
+    .company-logo-img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .experience-header {
+        padding: 10px 20px;
+    }
+    
+    .experience-header .experience-title {
+        font-size: 16px;
+    }
+    
+    .experience-details {
+        padding: 20px;
+    }
+    
+    .job-title {
+        font-size: 18px;
+    }
+    
+    .job-period {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .job-responsibilities li {
+        font-size: 14px;
+        margin-bottom: 12px;
+        padding-left: 20px;
+    }
+    
+    .company-logo-container {
+        max-height: 220px;
+    }
+    
+    .company-logo-img {
+        max-height: 220px;
+        padding: 20px;
+    }
 }
 
 /* Projects Section */
@@ -751,7 +877,11 @@ nav ul li a:hover {
     }
     
     .company-logo {
-        margin-bottom: 20px;
+        /* Removing as this class is no longer used */
+    }
+    
+    .company-logo img {
+        /* Removing as this class is no longer used */
     }
     
     .hero-image img {
