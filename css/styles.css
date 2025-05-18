@@ -385,8 +385,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-.tool-name, .language-name {
-    margin-bottom: 10px;
+.tool-name, .language-name {  
     font-weight: 500;
     color: var(--white);
 }
@@ -412,18 +411,43 @@ nav ul li a:hover {
 
 .language-level {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+    align-items: center;
 }
 
 .dot {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background-color: var(--dark-bg-light);
+    background-color: rgba(26, 26, 36, 0.8);
+    display: inline-block;
+    transition: all 0.2s ease;
 }
 
 .dot.filled {
-    background: linear-gradient(to right, #F400FF, #893CFF);
+    background: linear-gradient(to bottom, #ff00ff, #893cff, #00e5ff);
+    background-size: 100% 200%;
+    animation: gradientAnimation 3s ease infinite;
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+.dot.half-filled {
+    background: linear-gradient(to right, #ff00ff 50%, rgba(26, 26, 36, 0.8) 50%);
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.dot.half-filled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff00ff, #893cff, #00e5ff);
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
 }
 
 /* Experience Section */
@@ -609,6 +633,25 @@ nav ul li a:hover {
     
     .tools-languages {
         flex-direction: column;
+        gap: 40px;
+    }
+    
+    .tools-grid {
+        gap: 20px;
+    }
+    
+    .circle-progress {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .circle-inner {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .circle-number {
+        font-size: 18px;
     }
     
     .projects-grid {
@@ -623,6 +666,23 @@ nav ul li a:hover {
     .hero-image::after {
         width: 320px;
         height: 520px;
+    }
+    
+    .language-box {
+        padding: 15px 20px;
+    }
+    
+    .language-info {
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .language-skill-item {
+        padding: 14px 20px;
     }
 }
 
@@ -687,6 +747,58 @@ nav ul li a:hover {
     
     .skills-column {
         gap: 20px;
+    }
+    
+    .tools-grid {
+        gap: 15px;
+    }
+    
+    .circle-progress {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .circle-inner {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-number {
+        font-size: 16px;
+    }
+    
+    .language-box,
+    .language-skill-item {
+        padding: 12px 15px;
+    }
+    
+    .language-box.skill-item,
+    .language-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin-top: 8px;
+    }
+    
+    .language-level {
+        margin-top: 5px;
+    }
+    
+    .dot {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .language-skill-item {
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .language-level {
+        margin-top: 5px;
     }
 }
 
@@ -871,5 +983,176 @@ section {
     
     .timeline-institution {
         font-size: 14px;
+    }
+}
+
+/* Estilos para os indicadores circulares */
+.tools-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tool-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.circle-progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(16, 16, 30, 0.5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.circle-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary) var(--percentage), transparent var(--percentage));
+    mask: radial-gradient(transparent 65%, black 66%);
+    -webkit-mask: radial-gradient(transparent 65%, black 66%);
+}
+
+.circle-progress[data-percentage="95"] {
+    --percentage: 95%;
+}
+
+.circle-progress[data-percentage="70"] {
+    --percentage: 70%;
+}
+
+.circle-progress[data-percentage="45"] {
+    --percentage: 45%;
+}
+
+.circle-inner {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--dark-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.circle-number {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 22px;
+    background: linear-gradient(to bottom, #ff00ff, #893cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tool-name {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Language styles */
+h2.languages-title {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 32px;
+    text-shadow: 0px 0px 10px rgba(244, 5, 255, 0.3);
+}
+
+h2.languages-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--primary-color), #893CFF);
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.language-box {
+    display: flex;
+    align-items: center;
+}
+
+.language-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.language-level {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.language-skill-item {
+    background-color: rgba(16, 16, 30, 0.85);
+    border-radius: 12px;
+    padding: 22px 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.language-name {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.language-level {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    .language-skill-item {
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .language-level {
+        margin-top: 10px;
+    }
+    
+    .dot {
+        width: 14px;
+        height: 14px;
     }
 }
