@@ -428,12 +428,10 @@ nav ul li a:hover {
     background: linear-gradient(to bottom, #ff00ff, #893cff, #00e5ff);
     background-size: 100% 200%;
     animation: gradientAnimation 3s ease infinite;
-    box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
 }
 
 .dot.half-filled {
     background: linear-gradient(to right, #ff00ff 50%, rgba(26, 26, 36, 0.8) 50%);
-    box-shadow: 0 0 8px rgba(255, 0, 255, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -641,8 +639,8 @@ nav ul li a:hover {
     }
     
     .circle-progress {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
     
     .circle-inner {
@@ -754,8 +752,8 @@ nav ul li a:hover {
     }
     
     .circle-progress {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
     }
     
     .circle-inner {
@@ -1003,14 +1001,10 @@ section {
 }
 
 .circle-progress {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    background: rgba(16, 16, 30, 0.5);
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -1031,6 +1025,10 @@ section {
     --percentage: 95%;
 }
 
+.circle-progress[data-percentage="85"] {
+    --percentage: 85%;
+}
+
 .circle-progress[data-percentage="70"] {
     --percentage: 70%;
 }
@@ -1040,16 +1038,7 @@ section {
 }
 
 .circle-inner {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: var(--dark-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: none;
 }
 
 .circle-number {
@@ -1076,7 +1065,6 @@ h2.languages-title {
     position: relative;
     padding-bottom: 15px;
     font-size: 32px;
-    text-shadow: 0px 0px 10px rgba(244, 5, 255, 0.3);
 }
 
 h2.languages-title::after {
@@ -1155,4 +1143,12 @@ h2.languages-title::after {
         width: 14px;
         height: 14px;
     }
+}
+
+/* Ajuste específico para o texto dentro do SVG */
+text.circle-number {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 8px;
+    dominant-baseline: middle;
 }
