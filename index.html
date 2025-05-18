@@ -280,6 +280,68 @@
         stars.appendChild(star);
       }
     }
+    
+    // Função para abrir a modal com a imagem ampliada
+    function openImageModal(imgElement, caption) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const captionText = document.getElementById('modalCaption');
+      const modalContent = document.querySelector('.modal-content');
+      
+      // Limpar estilos anteriores
+      if (modalContent) {
+        modalContent.style.opacity = '0';
+      }
+      
+      // Mostrar a modal
+      modal.style.display = 'flex';
+      
+      // Configurar a imagem e legenda
+      modalImg.src = imgElement.src;
+      captionText.innerHTML = caption;
+      
+      // Centralizar a modal após carregar a imagem
+      modalImg.onload = function() {
+        if (modalContent) {
+          // Aplicar fade-in após a imagem carregar
+          setTimeout(() => {
+            modalContent.style.opacity = '1';
+          }, 50);
+        }
+        
+        // Scrollar para o topo da modal, considerando o header
+        modal.scrollTop = 0;
+        
+        // Ajustar posição para ficar abaixo do header
+        const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 80;
+        modal.style.paddingTop = `${headerHeight + 10}px`;
+      };
+      
+      // Impedir rolagem da página quando a modal estiver aberta
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Função para fechar a modal
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      
+      // Adicionar animação de saída
+      const modalContent = document.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.style.opacity = '0';
+        
+        // Aguardar a animação completar antes de esconder a modal
+        setTimeout(() => {
+          modal.style.display = 'none';
+          // Restaurar rolagem da página
+          document.body.style.overflow = 'auto';
+        }, 200);
+      } else {
+        modal.style.display = 'none';
+        // Restaurar rolagem da página
+        document.body.style.overflow = 'auto';
+      }
+    }
 
     // Carregar todos os componentes quando a página carregar
     document.addEventListener('DOMContentLoaded', async () => {
@@ -291,8 +353,33 @@
       await loadComponent('experience', 'components/experience.html');
       await loadComponent('projects', 'components/projects.html');
       await loadComponent('contact', 'components/contact.html');
+      
+      // Configurar os event listeners para modal após carregar os componentes
+      setupModalListeners();
     });
+    
+    // Função para configurar os listeners da modal
+    function setupModalListeners() {
+      // Fechar a modal se o usuário clicar fora dela
+      const modal = document.getElementById('imageModal');
+      if (modal) {
+        window.onclick = function(event) {
+          if (event.target === modal) {
+            closeImageModal();
+          }
+        };
+      }
+    }
   </script>
+  
+  <!-- Modal para visualização de imagens (global) -->
+  <div id="imageModal" class="image-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeImageModal()">&times;</span>
+      <img id="modalImage" class="modal-image" src="" alt="">
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+  </div>
 </body>
 
 </html>
