@@ -102,6 +102,7 @@
   <div id="hero"></div>
   <div id="about"></div>
   <div id="education"></div>
+  <div id="feedback"></div>
   <div id="skills">
     <section id="skills" class="skills">
       <div class="container">
@@ -251,8 +252,7 @@
   </div>
   <div id="experience"></div>
   <div id="projects"></div>
-  <div id="contact"></div>
-
+  
   <script>
     // Função para carregar componentes HTML
     async function loadComponent(containerId, componentPath) {
@@ -350,9 +350,9 @@
       await loadComponent('hero', 'components/hero.html');
       await loadComponent('about', 'components/about.html');
       await loadComponent('education', 'components/education.html');
+      await loadComponent('feedback', 'components/feedback.html');
       await loadComponent('experience', 'components/experience.html');
       await loadComponent('projects', 'components/projects.html');
-      await loadComponent('contact', 'components/contact.html');
       
       // Configurar os event listeners para modal após carregar os componentes
       setupModalListeners();
