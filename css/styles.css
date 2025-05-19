@@ -133,6 +133,59 @@ header .container {
     color: var(--primary-color);
 }
 
+/* Menu toggle button - escondido por padrão em telas grandes */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+    position: relative;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* Animação do botão quando ativo */
+.menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--primary-color);
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--primary-color);
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -918,10 +971,53 @@ nav ul li a.active::after {
         padding: 15px 0;
     }
     
-    nav ul {
-        gap: 20px;
+    /* Menu responsivo */
+    .menu-toggle {
+        display: block;
     }
     
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(15, 15, 25, 0.98);
+        backdrop-filter: blur(10px);
+        transition: right 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+    
+    .main-nav.active {
+        right: 0;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    
+    .main-nav ul li {
+        margin: 15px 0;
+    }
+    
+    .main-nav ul li a {
+        font-size: 18px;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .main-nav ul li a.active::after {
+        bottom: 0;
+    }
+    
+    /* Outros estilos responsivos */
     .hero .container {
         flex-direction: column;
         text-align: center;
@@ -1786,6 +1882,23 @@ text.circle-number {
     }
     
     .feedback-text {
+        font-size: 14px;
+    }
+}
+
+/* Os estilos para dispositivos móveis estão consolidados na media query principal */
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .main-nav {
+        width: 85%;
+    }
+    
+    header .container {
+        padding: 0 15px;
+    }
+    
+    .logo {
         font-size: 14px;
     }
 }
