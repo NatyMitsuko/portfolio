@@ -1709,9 +1709,6 @@ text.circle-number {
     border: 1px solid rgba(255, 0, 255, 0.2);
 }
 
-.feedback-quote {
-    margin-bottom: 20px;
-}
 
 .feedback-content {
     flex: 1;
