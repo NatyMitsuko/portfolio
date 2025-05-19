@@ -5,12 +5,27 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#about">About me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">My skills</a></li>
-                <li><a href="#experience">Professional Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about-me" class="nav-link" data-section="about-me">About me</a></li>
+                <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">My skills</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Professional Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
             </ul>
         </nav>
     </div>
 </header> 
+
+<script>
+    // Script para gerenciar apenas os cliques nos links
+    document.addEventListener('DOMContentLoaded', function() {
+        // Adicionar evento de clique aos links para ativar a classe imediatamente
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+</script> 

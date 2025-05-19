@@ -150,6 +150,35 @@ nav ul li a:hover {
     color: var(--primary-color-dark);
 }
 
+/* Estilo para o link ativo no menu */
+nav ul li a.active {
+    color: var(--primary-color-dark);
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scaleX(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
 /* Hero Section */
 .hero {
     padding: 180px 0 100px;

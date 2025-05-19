@@ -100,7 +100,7 @@
   <div class="background-stars" id="backgroundStars"></div>
   <div id="header"></div>
   <div id="hero"></div>
-  <div id="about"></div>
+  <div id="about-me"></div>
   <div id="education"></div>
   <div id="skills">
     <section id="skills" class="skills">
@@ -348,7 +348,7 @@
       createStars();
       await loadComponent('header', 'components/header.html');
       await loadComponent('hero', 'components/hero.html');
-      await loadComponent('about', 'components/about.html');
+      await loadComponent('about-me', 'components/about.html');
       await loadComponent('education', 'components/education.html');
       await loadComponent('experience', 'components/experience.html');
       await loadComponent('projects', 'components/projects.html');
@@ -356,6 +356,12 @@
       
       // Configurar os event listeners para modal após carregar os componentes
       setupModalListeners();
+      
+      // Disparar evento indicando que todos os componentes foram carregados
+      document.dispatchEvent(new CustomEvent('componentsLoaded'));
+      
+      // Inicializar a detecção da seção atual para atualizar o menu
+      setupActiveMenuOnScroll();
     });
     
     // Função para configurar os listeners da modal
@@ -369,6 +375,63 @@
           }
         };
       }
+    }
+    
+    // Função para configurar o monitoramento de scroll para o menu ativo
+    function setupActiveMenuOnScroll() {
+      // Este código será executado após o carregamento de todos os componentes
+      const sections = document.querySelectorAll('section[id], div[id="about-me"], div[id="education"], div[id="skills"], div[id="experience"], div[id="projects"]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      if (sections.length === 0 || navLinks.length === 0) {
+        console.warn('Elementos não encontrados para o monitoramento de scroll');
+        return;
+      }
+      
+      function highlightActiveLink() {
+        // Posição do scroll + altura do header para ajuste
+        let scrollPosition = window.scrollY;
+        const headerHeight = document.querySelector('.main-header')?.offsetHeight || 80;
+        scrollPosition += headerHeight + 50;
+        
+        // Verificar qual seção está visível
+        let currentSection = '';
+        
+        // Ignorar a detecção no topo da página (seção hero)
+        const heroSection = document.querySelector('.hero');
+        const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 0;
+        
+        // Se estiver na seção hero, não marcar nenhum link como ativo
+        if (scrollPosition < heroBottom) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          return;
+        }
+        
+        sections.forEach(section => {
+          if (!section || !section.id) return;
+          
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.id;
+          }
+        });
+        
+        // Atualizar classes nos links
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          const sectionName = link.getAttribute('data-section');
+          
+          if (sectionName === currentSection) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      // Executar inicialmente e ao rolar
+      highlightActiveLink();
+      window.addEventListener('scroll', highlightActiveLink);
     }
   </script>
   
