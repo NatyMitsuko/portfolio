@@ -1,73 +1,109 @@
-# Portfólio de Natália Mitsuko - UX/UI Designer
+# Portfolio Natália Mitsuko - UX/UI Designer
 
-Este é um site de portfólio para Natália Mitsuko, uma UX/UI Designer. O projeto foi estruturado com componentes isolados para facilitar a manutenção e atualização.
+Portfolio pessoal da Natália Mitsuko, UX/UI Designer, desenvolvido com tecnologias modernas e otimizado com Vite.
 
-## Estrutura do Projeto
+## 🚀 Tecnologias Utilizadas
 
+- **Vite** - Build tool moderno e rápido
+- **JavaScript ES6+** - Módulos modernos
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização avançada com variáveis CSS
+- **Responsive Design** - Layout adaptável para todos os dispositivos
+
+## 🛠️ Melhorias Implementadas
+
+### ✅ Migração para Vite
+- **Eliminação dos carregamentos manuais**: Não há mais aqueles `loadComponent()` assíncronos
+- **Módulos ES6**: Componentes organizados em módulos JavaScript
+- **Hot Module Replacement (HMR)**: Atualizações instantâneas durante o desenvolvimento
+- **Build otimizado**: Bundling automático e otimização de assets
+- **Servidor de desenvolvimento**: Servidor local rápido com live reload
+
+### 🏗️ Estrutura Modular
 ```
-📁 Portfolio page/
-├── 📁 css/
-│   └── 📄 styles.css         # Estilos CSS globais
-├── 📁 images/                # Imagens do site
-├── 📁 components/            # Componentes HTML isolados
-│   ├── 📄 header.html        # Cabeçalho com navegação
-│   ├── 📄 hero.html          # Seção hero (introdução)
-│   ├── 📄 about.html         # Seção Sobre mim, Habilidades, Ferramentas e Idiomas
-│   ├── 📄 experience.html    # Seção de Experiência Profissional
-│   ├── 📄 projects.html      # Seção de Projetos Pessoais
-│   └── 📄 contact.html       # Seção de Contato
-├── 📄 index.html             # Versão PHP (requer servidor PHP)
-├── 📄 index-without-php.html # Versão JavaScript (não requer PHP)
-└── 📄 README.md              # Este arquivo
+src/
+├── js/
+│   ├── main.js              # Arquivo principal da aplicação
+│   └── components/          # Componentes modulares
+│       ├── header.js        # Componente do cabeçalho
+│       ├── hero.js          # Seção hero
+│       └── about.js         # Seção sobre
+├── css/
+│   └── styles.css           # Estilos principais
+├── components/              # Componentes HTML legados (temporário)
+├── Assets/                  # Imagens e recursos
+└── index.html              # Página principal otimizada
 ```
 
-## Como Usar
+## 🚀 Como Executar
 
-### Opção 1: Usando PHP
+### Desenvolvimento
+```bash
+# Instalar dependências
+npm install
 
-Se você tem um servidor PHP disponível (como XAMPP, WAMP ou um servidor web com PHP):
+# Iniciar servidor de desenvolvimento
+npm run dev
+```
 
-1. Coloque todos os arquivos no diretório raiz do seu servidor web
-2. Acesse o site através do arquivo `index.html`
-3. Os componentes serão incluídos através das diretivas PHP include
+O projeto será aberto automaticamente em `http://localhost:3000`
 
-### Opção 2: Usando JavaScript (sem PHP)
+### Build para Produção
+```bash
+# Gerar build otimizado
+npm run build
 
-Se você não tem acesso a um servidor PHP:
+# Visualizar build localmente
+npm run preview
+```
 
-1. Renomeie `index-without-php.html` para `index.html` (ou use-o diretamente)
-2. Abra o arquivo no navegador
-3. Os componentes serão carregados automaticamente via JavaScript fetch API
+## 📱 Funcionalidades
 
-## Modificando Componentes
+- **Design Responsivo**: Adaptável para desktop, tablet e mobile
+- **Navegação Suave**: Scroll suave entre seções
+- **Menu Interativo**: Destaque da seção atual no menu
+- **Modal de Imagens**: Visualização ampliada de projetos
+- **Animações CSS**: Efeitos visuais suaves
+- **Performance Otimizada**: Carregamento rápido com Vite
 
-Para alterar qualquer parte do site, basta editar o arquivo de componente correspondente:
+## 🎯 Benefícios da Migração para Vite
 
-- Para alterar o cabeçalho: edite `components/header.html`
-- Para alterar a seção hero: edite `components/hero.html`
-- E assim por diante...
+1. **Desenvolvimento Mais Rápido**: 
+   - Servidor de desenvolvimento instantâneo
+   - Hot Module Replacement (HMR)
+   - Não há mais espera para carregamentos de componentes
 
-## Estilos
+2. **Código Mais Limpo**:
+   - Eliminação de scripts inline
+   - Organização modular
+   - Imports/exports ES6
 
-Todos os estilos estão no arquivo `css/styles.css`, organizados por seção:
+3. **Build Otimizado**:
+   - Bundling automático
+   - Tree-shaking
+   - Minificação automática
+   - Otimização de assets
 
-- Estilos Base (variáveis CSS, reset, tipografia)
-- Header
-- Hero Section
-- About Section
-- Skills Section
-- Tools and Languages
-- Experience Section
-- Projects Section
-- Contact Section
-- Responsividade
-- Animações e efeitos visuais
+4. **Melhor Experiência de Desenvolvimento**:
+   - Error overlay no browser
+   - Source maps
+   - TypeScript support (se necessário)
 
-## Responsividade
+## 🔧 Próximos Passos
 
-O site é totalmente responsivo, com adaptações para:
+- [ ] Migrar componentes restantes para módulos ES6
+- [ ] Implementar lazy loading para imagens
+- [ ] Adicionar testes automatizados
+- [ ] Configurar CI/CD
+- [ ] Otimizar SEO
 
-- Desktops (1024px e acima)
-- Tablets (768px a 1023px)
-- Celulares (abaixo de 768px)
-- Celulares pequenos (abaixo de 576px) 
+## 📞 Contato
+
+- **LinkedIn**: [natymitsuko](https://www.linkedin.com/in/natymitsuko/)
+- **Behance**: [natymitsuko](https://www.behance.net/natymitsuko)
+- **Dribbble**: [natymitsuko](https://dribbble.com/natymitsuko)
+- **GitHub**: [NatyMitsuko](https://github.com/NatyMitsuko)
+
+---
+
+Desenvolvido com ❤️ por Natália Mitsuko

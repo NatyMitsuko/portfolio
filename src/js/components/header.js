@@ -1,0 +1,71 @@
+export function createHeader() {
+  return `
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <span>UX/UI Designer</span>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_1960_1484" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+              <rect x="0.236572" y="0.643555" width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_1960_1484)">
+              <path d="M4.48657 18.2778C4.27407 18.2778 4.09599 18.2059 3.95232 18.062C3.80849 17.9184 3.73657 17.7402 3.73657 17.5275C3.73657 17.315 3.80849 17.137 3.95232 16.9933C4.09599 16.8498 4.27407 16.778 4.48657 16.778H19.9866C20.1991 16.778 20.3772 16.8499 20.5208 16.9935C20.6647 17.1374 20.7366 17.3156 20.7366 17.5283C20.7366 17.7408 20.6647 17.9189 20.5208 18.0625C20.3772 18.206 20.1991 18.2778 19.9866 18.2778H4.48657ZM4.48657 13.3933C4.27407 13.3933 4.09599 13.3214 3.95232 13.1775C3.80849 13.0337 3.73657 12.8555 3.73657 12.643C3.73657 12.4304 3.80849 12.2523 3.95232 12.1088C4.09599 11.9651 4.27407 11.8933 4.48657 11.8933H19.9866C20.1991 11.8933 20.3772 11.9652 20.5208 12.109C20.6647 12.2529 20.7366 12.431 20.7366 12.6435C20.7366 12.8562 20.6647 13.0343 20.5208 13.1778C20.3772 13.3215 20.1991 13.3933 19.9866 13.3933H4.48657ZM4.48657 8.50854C4.27407 8.50854 4.09599 8.43671 3.95232 8.29304C3.80849 8.14921 3.73657 7.97096 3.73657 7.75829C3.73657 7.54579 3.80849 7.36771 3.95232 7.22404C4.09599 7.08054 4.27407 7.00879 4.48657 7.00879H19.9866C20.1991 7.00879 20.3772 7.08071 20.5208 7.22454C20.6647 7.36821 20.7366 7.54637 20.7366 7.75904C20.7366 7.97154 20.6647 8.14962 20.5208 8.29329C20.3772 8.43679 20.1991 8.50854 19.9866 8.50854H4.48657Z" fill="#893cff"/>
+            </g>
+          </svg>
+        </button>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#about-me" class="nav-link" data-section="about-me">About me</a></li>
+            <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+            <li><a href="#skills" class="nav-link" data-section="skills">My skills</a></li>
+            <li><a href="#experience" class="nav-link" data-section="experience">Professional Experience</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  `;
+}
+
+export function initHeader() {
+  // Selecionar elementos
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Toggle menu em dispositivos móveis
+  menuToggle?.addEventListener('click', function() {
+    mainNav?.classList.toggle('active');
+    menuToggle?.classList.toggle('active');
+  });
+  
+  // Fechar menu ao clicar em um link (somente em dispositivos móveis)
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Remover a classe active de todos os links
+      navLinks.forEach(l => l.classList.remove('active'));
+      // Adicionar a classe active no link clicado
+      this.classList.add('active');
+      
+      // Se estiver em dispositivos móveis, fechar o menu
+      if (window.innerWidth <= 768) {
+        mainNav?.classList.remove('active');
+        menuToggle?.classList.remove('active');
+      }
+    });
+  });
+
+  // Fechar menu quando clicar fora dele
+  document.addEventListener('click', function(e) {
+    const isMenuOpen = mainNav?.classList.contains('active');
+    const clickedInsideNav = mainNav?.contains(e.target);
+    const clickedOnToggle = menuToggle?.contains(e.target);
+    
+    if (isMenuOpen && !clickedInsideNav && !clickedOnToggle) {
+      mainNav?.classList.remove('active');
+      menuToggle?.classList.remove('active');
+    }
+  });
+} 
