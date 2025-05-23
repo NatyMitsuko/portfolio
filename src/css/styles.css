@@ -29,7 +29,7 @@ body {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -139,7 +139,6 @@ header .container {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
     z-index: 1001;
     position: relative;
 }
@@ -1738,7 +1737,7 @@ text.circle-number {
 @media (max-width: 768px) {
     .modal-content {
         width: 95%;
-        padding: 15px;
+        padding: 16px;
         margin: 0 auto 20px;
         max-height: calc(100vh - 120px); /* Ajustado para considerar o header em mobile */
     }
@@ -1895,7 +1894,7 @@ text.circle-number {
     }
     
     header .container {
-        padding: 0 15px;
+        padding: 0 16px;
     }
     
     .logo {
