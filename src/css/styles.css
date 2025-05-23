@@ -967,7 +967,7 @@ nav ul li a.active::after {
 
 @media (max-width: 768px) {
     header {
-        padding: 15px 0;
+        padding: 16px 0;
     }
     
     /* Menu responsivo */
