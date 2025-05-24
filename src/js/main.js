@@ -1,6 +1,11 @@
 import { createHeader, initHeader } from './components/header.js';
 import { createHero } from './components/hero.js';
 import { createAbout } from './components/about.js';
+import { createEducation } from './components/education.js';
+import { createSkills } from './components/skills.js';
+import { createExperience } from './components/experience.js';
+import { createProjects } from './components/projects.js';
+import { createFeedback } from './components/feedback.js';
 import '../css/styles.css';
 
 // Função para criar as estrelas de fundo
@@ -150,37 +155,25 @@ function setupActiveMenuOnScroll() {
   window.addEventListener('scroll', highlightActiveLink);
 }
 
-// Função para carregar componentes HTML dos arquivos existentes
-async function loadLegacyComponent(containerId, componentPath) {
-  try {
-    const response = await fetch(componentPath);
-    const html = await response.text();
-    document.getElementById(containerId).innerHTML = html;
-  } catch (error) {
-    console.error(`Erro ao carregar o componente ${componentPath}:`, error);
-  }
-}
-
 // Função principal para inicializar a aplicação
-async function initApp() {
+function initApp() {
   // Criar estrelas de fundo
   createStars();
   
-  // Carregar componentes usando módulos ES6
+  // Carregar TODOS os componentes de uma vez usando módulos ES6
   document.getElementById('header').innerHTML = createHeader();
   document.getElementById('hero').innerHTML = createHero();
   document.getElementById('about-me').innerHTML = createAbout();
-  
-  // Carregar componentes legados (temporariamente)
-  await loadLegacyComponent('education', 'components/education.html');
-  await loadLegacyComponent('experience', 'components/experience.html');
-  await loadLegacyComponent('projects', 'components/projects.html');
-  await loadLegacyComponent('feedback', 'components/feedback.html');
+  document.getElementById('education').innerHTML = createEducation();
+  document.getElementById('skills').innerHTML = createSkills();
+  document.getElementById('experience').innerHTML = createExperience();
+  document.getElementById('projects').innerHTML = createProjects();
+  document.getElementById('feedback').innerHTML = createFeedback();
   
   // Inicializar funcionalidades dos componentes
   initHeader();
   
-  // Configurar os event listeners para modal após carregar os componentes
+  // Configurar os event listeners para modal
   setupModalListeners();
   
   // Disparar evento indicando que todos os componentes foram carregados
@@ -188,6 +181,8 @@ async function initApp() {
   
   // Inicializar a detecção da seção atual para atualizar o menu
   setupActiveMenuOnScroll();
+  
+  console.log('✅ Todos os componentes carregados instantaneamente!');
 }
 
 // Tornar funções globais disponíveis para uso em HTML

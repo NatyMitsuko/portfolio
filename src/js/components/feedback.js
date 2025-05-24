@@ -1,0 +1,104 @@
+export function createFeedback() {
+  return `
+    <section id="feedback" class="feedback">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+        
+        .company-tag {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: linear-gradient(90deg, #FF00FF, #893CFF);
+          color: white;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          box-shadow: 0 2px 10px rgba(137, 60, 255, 0.3);
+        }
+
+        .feedback-text::before {
+          content: '"';
+          display: block;
+          font-size: 80px;
+          font-family: 'Salsa', cursive;
+          background: linear-gradient(90deg, #FF00FF, #893CFF);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          line-height: 1;
+        }
+
+        .author-name {
+          font-weight: 500;
+          color: #FF00FF;
+        }
+
+        .author-title {
+          display: block;
+          font-size: 0.9em;
+          color: var(--primary-color-dark);
+          margin-top: 4px;
+        }
+        
+        .feedback-card a {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        }
+        
+        .feedback-card a:hover {
+          text-decoration: none;
+        }
+      </style>
+      <div class="container">
+        <h2>Feedback from coworkers</h2>
+        <div class="feedback-grid" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="feedback-card">
+            <a href="https://www.linkedin.com/in/natymitsuko/details/recommendations/?detailScreenTabIndex=0&locale=en_US">
+              <span class="company-tag">EDGE Innovation Center</span>
+              <div class="feedback-content">
+                <p class="feedback-text">"I had the pleasure of leading Natália for two years and I can say that she is a
+                  competent and dedicated professional. Her Figma skills and attention to detail contributed significantly to
+                  our projects. Natália has always shown herself to be agile, organized and proactive, ready to help with
+                  questions from developers and less experienced colleagues and is always looking to update herself. She has a
+                  collaborative approach that helps maintain a good working environment and always tries to balance the needs
+                  of the clients with the constraints of the project. She is a reliable and efficient professional and an
+                  excellent addition to any design team."</p>
+                <div class="feedback-author">
+                  <span class="author-name">Tainá Ribeiro</span>
+                  <span class="author-title">Senior UI/UX Designer</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="feedback-card">
+            <a href="https://www.linkedin.com/in/natymitsuko/details/recommendations/?detailScreenTabIndex=0&locale=en_US">
+              <span class="company-tag">EDGE Innovation Center</span>
+              <div class="feedback-content">
+                <p class="feedback-text">"Natália is a highly talented professional known for her creativity, attention to detail, impeccable organization and resourcefulness at Figma. She not only contributes exemplary technical skills, but also fosters a collaborative and positive spirit within the team. Natália is an invaluable addition to any project that values creative excellence and efficiency."</p>
+                <div class="feedback-author">
+                  <span class="author-name">Ilanna Lins</span>
+                  <span class="author-title">UI/UX Designer | Product Designer</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="feedback-card">
+            <a href="https://www.linkedin.com/in/natymitsuko/details/recommendations/?detailScreenTabIndex=0&locale=en_US">
+              <span class="company-tag">EDGE Innovation Center</span>
+              <div class="feedback-content">
+                <p class="feedback-text">"Natália worked as a Designer in the teams I led, always proactive and available to help us with layout doubts and also in discovering new features. An exceptional designer who not only considers the client's needs but also the teams' ability to implement such demands."</p>
+                <div class="feedback-author">
+                  <span class="author-name">Luiz Barroca</span>
+                  <span class="author-title">Tech Leader | Developer</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+} 

@@ -1,0 +1,59 @@
+export function createProjects() {
+  return `
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/First-project-2021.png" alt="Nome do Projeto 1">
+              <div class="project-year">2023</div>
+              <div class="project-info">
+                <h3>Nome do Projeto 1</h3>
+                <div class="project-description">
+                  <p>Breve descrição sobre este projeto incrível</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/Contas-casal-2022.png" alt="Nome do Projeto 2">
+              <div class="project-year">2022</div>
+              <div class="project-info">
+                <h3>Nome do Projeto 2</h3>
+                <div class="project-description">
+                  <p>Breve descrição sobre este projeto incrível</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/First-project-2021.png" alt="Nome do Projeto 3">
+              <div class="project-year">2021</div>
+              <div class="project-info">
+                <h3>Nome do Projeto 3</h3>
+                <div class="project-description">
+                  <p>Breve descrição sobre este projeto incrível</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/Contas-casal-2022.png" alt="Nome do Projeto 4">
+              <div class="project-year">2020</div>
+              <div class="project-info">
+                <h3>Nome do Projeto 4</h3>
+                <div class="project-description">
+                  <p>Breve descrição sobre este projeto incrível</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+} 

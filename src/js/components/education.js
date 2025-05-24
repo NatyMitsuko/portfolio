@@ -1,0 +1,52 @@
+export function createEducation() {
+  return `
+    <section class="section education-section">
+      <div class="container">
+        <h2 class="section-title">Education background</h2>
+        <div class="section-content">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-item-content">
+                <span class="timeline-date">2024</span>
+                <h3 class="timeline-title">MBA UX Design and User Research</h3>
+                <p class="timeline-institution">Leandro Rezende / Unifast</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-item-content">
+                <span class="timeline-date">2023</span>
+                <h3 class="timeline-title">UX Unicorn Program (Course)</h3>
+                <p class="timeline-institution">Leandro Rezende</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-item-content">
+                <span class="timeline-date">2021</span>
+                <h3 class="timeline-title">UI Design with visual references</h3>
+                <p class="timeline-institution">Udemy</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-item-content">
+                <span class="timeline-date">2021</span>
+                <h3 class="timeline-title">Figma: Collaborative Design</h3>
+                <p class="timeline-institution">Udemy</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-item-content">
+                <span class="timeline-date">2016-2020</span>
+                <h3 class="timeline-title">Psychology Graduation</h3>
+                <p class="timeline-institution">UNIT - AL</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+} 
