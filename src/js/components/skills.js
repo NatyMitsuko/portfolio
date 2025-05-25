@@ -69,10 +69,10 @@ export function createSkills() {
                   <path class="circle-fill" d="M18 2.0845
                                       a 15.9155 15.9155 0 0 1 0 31.831
                                       a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient)"
-                    stroke-width="4" stroke-dasharray="85, 100" stroke-linecap="round" />
-                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">85%</text>
+                    stroke-width="4" stroke-dasharray="90, 100" stroke-linecap="round" />
+                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">90%</text>
                 </svg>
-                <div class="tool-name">Figma</div>
+                <div class="tool-name">Figjam</div>
               </div>
               <div class="tool-circle">
                 <svg class="circle-progress" viewBox="0 0 36 36" width="110" height="110">
@@ -89,13 +89,58 @@ export function createSkills() {
                   <path class="circle-fill" d="M18 2.0845
                                       a 15.9155 15.9155 0 0 1 0 31.831
                                       a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient2)"
-                    stroke-width="4" stroke-dasharray="70, 100" stroke-linecap="round" />
-                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">70%</text>
+                    stroke-width="4" stroke-dasharray="85, 100" stroke-linecap="round" />
+                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">85%</text>
                 </svg>
-                <div class="tool-name">Figjam</div>
+                <div class="tool-name">Figma</div>
+              </div>
+                            <div class="tool-circle">
+                <svg class="circle-progress" viewBox="0 0 36 36" width="110" height="110">
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ff00ff" />
+                      <stop offset="100%" stop-color="#893cff" />
+                    </linearGradient>
+                  </defs>
+                  <path class="circle-bg" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(16, 16, 30, 0.5)"
+                    stroke-width="4" />
+                  <path class="circle-fill" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient)"
+                    stroke-width="4" stroke-dasharray="40, 100" stroke-linecap="round" />
+                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">40%</text>
+                </svg>
+                <div class="tool-name">Miro</div>
               </div>
             </div>
           </div>
+                      <div class="languages">
+                <h2 class="languages-title">Languages</h2>
+                <div class="languages-grid">
+                    <div class="language-skill-item">
+                        <div class="language-name">Portuguese (BR)</div>
+                        <div class="language-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
+                    </div>
+                    <div class="language-skill-item">
+                        <div class="language-name">English (USA)</div>
+                        <div class="language-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot half-filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </section>
