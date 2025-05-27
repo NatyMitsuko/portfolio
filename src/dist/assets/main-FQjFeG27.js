@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const s of a)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&t(o)}).observe(document,{childList:!0,subtree:!0});function n(a){const s={};return a.integrity&&(s.integrity=a.integrity),a.referrerPolicy&&(s.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?s.credentials="include":a.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function t(a){if(a.ep)return;a.ep=!0;const s=n(a);fetch(a.href,s)}})();function v(){return`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))t(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&t(o)}).observe(document,{childList:!0,subtree:!0});function n(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function t(a){if(a.ep)return;a.ep=!0;const i=n(a);fetch(a.href,i)}})();function v(){return`
     <header class="main-header">
       <div class="container">
         <div class="logo">
@@ -25,7 +25,7 @@
         </nav>
       </div>
     </header>
-  `}function u(){const i=document.querySelector(".menu-toggle"),e=document.querySelector(".main-nav"),n=document.querySelectorAll(".nav-link");i==null||i.addEventListener("click",function(){e==null||e.classList.toggle("active"),i==null||i.classList.toggle("active")}),n.forEach(t=>{t.addEventListener("click",function(a){n.forEach(s=>s.classList.remove("active")),this.classList.add("active"),window.innerWidth<=768&&(e==null||e.classList.remove("active"),i==null||i.classList.remove("active"))})}),document.addEventListener("click",function(t){const a=e==null?void 0:e.classList.contains("active"),s=e==null?void 0:e.contains(t.target),o=i==null?void 0:i.contains(t.target);a&&!s&&!o&&(e==null||e.classList.remove("active"),i==null||i.classList.remove("active"))})}function h(){return`
+  `}function u(){const s=document.querySelector(".menu-toggle"),e=document.querySelector(".main-nav"),n=document.querySelectorAll(".nav-link");s==null||s.addEventListener("click",function(){e==null||e.classList.toggle("active"),s==null||s.classList.toggle("active")}),n.forEach(t=>{t.addEventListener("click",function(a){n.forEach(i=>i.classList.remove("active")),this.classList.add("active"),window.innerWidth<=768&&(e==null||e.classList.remove("active"),s==null||s.classList.remove("active"))})}),document.addEventListener("click",function(t){const a=e==null?void 0:e.classList.contains("active"),i=e==null?void 0:e.contains(t.target),o=s==null?void 0:s.contains(t.target);a&&!i&&!o&&(e==null||e.classList.remove("active"),s==null||s.classList.remove("active"))})}function h(){return`
     <section id="hero-section" class="hero">
       <div class="container">
         <div class="hero-content">
@@ -191,10 +191,10 @@
                   <path class="circle-fill" d="M18 2.0845
                                       a 15.9155 15.9155 0 0 1 0 31.831
                                       a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient)"
-                    stroke-width="4" stroke-dasharray="85, 100" stroke-linecap="round" />
-                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">85%</text>
+                    stroke-width="4" stroke-dasharray="90, 100" stroke-linecap="round" />
+                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">90%</text>
                 </svg>
-                <div class="tool-name">Figma</div>
+                <div class="tool-name">Figjam</div>
               </div>
               <div class="tool-circle">
                 <svg class="circle-progress" viewBox="0 0 36 36" width="110" height="110">
@@ -211,13 +211,58 @@
                   <path class="circle-fill" d="M18 2.0845
                                       a 15.9155 15.9155 0 0 1 0 31.831
                                       a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient2)"
-                    stroke-width="4" stroke-dasharray="70, 100" stroke-linecap="round" />
-                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">70%</text>
+                    stroke-width="4" stroke-dasharray="85, 100" stroke-linecap="round" />
+                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">85%</text>
                 </svg>
-                <div class="tool-name">Figjam</div>
+                <div class="tool-name">Figma</div>
+              </div>
+                            <div class="tool-circle">
+                <svg class="circle-progress" viewBox="0 0 36 36" width="110" height="110">
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ff00ff" />
+                      <stop offset="100%" stop-color="#893cff" />
+                    </linearGradient>
+                  </defs>
+                  <path class="circle-bg" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(16, 16, 30, 0.5)"
+                    stroke-width="4" />
+                  <path class="circle-fill" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient)"
+                    stroke-width="4" stroke-dasharray="40, 100" stroke-linecap="round" />
+                  <text x="18" y="19" class="circle-number" text-anchor="middle" fill="var(--text-color)">40%</text>
+                </svg>
+                <div class="tool-name">Miro</div>
               </div>
             </div>
           </div>
+                      <div class="languages">
+                <h2 class="languages-title">Languages</h2>
+                <div class="languages-grid">
+                    <div class="language-skill-item">
+                        <div class="language-name">Portuguese (BR)</div>
+                        <div class="language-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
+                    </div>
+                    <div class="language-skill-item">
+                        <div class="language-name">English (USA)</div>
+                        <div class="language-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot half-filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </section>
@@ -451,4 +496,4 @@
         </div>
       </div>
     </section>
-  `}function w(){const i=document.getElementById("backgroundStars"),e=50;for(let n=0;n<e;n++){const t=document.createElement("div");t.className="background-star",t.style.left=`${Math.random()*100}%`,t.style.top=`${Math.random()*100}%`,t.style.animationDelay=`${Math.random()*4}s`,t.innerHTML="✦",i.appendChild(t)}}function j(i,e){const n=document.getElementById("imageModal"),t=document.getElementById("modalImage"),a=document.getElementById("modalCaption"),s=document.querySelector(".modal-content");s&&(s.style.opacity="0"),n.style.display="flex",t.src=i.src,a.innerHTML=e,t.onload=function(){s&&setTimeout(()=>{s.style.opacity="1"},50),n.scrollTop=0;const o=document.querySelector("header")?document.querySelector("header").offsetHeight:80;n.style.paddingTop=`${o+10}px`},document.body.style.overflow="hidden"}function d(){const i=document.getElementById("imageModal"),e=document.querySelector(".modal-content");e?(e.style.opacity="0",setTimeout(()=>{i.style.display="none",document.body.style.overflow="auto"},200)):(i.style.display="none",document.body.style.overflow="auto")}function E(){const i=document.getElementById("imageModal");i&&(window.onclick=function(e){e.target===i&&d()})}function C(){const i=document.querySelectorAll('section[id], div[id="about-me"], div[id="education"], div[id="skills"], div[id="experience"], div[id="projects"]'),e=document.querySelectorAll(".nav-link");if(i.length===0||e.length===0){console.warn("Elementos não encontrados para o monitoramento de scroll");return}function n(){var r;let t=window.scrollY;const a=((r=document.querySelector(".main-header"))==null?void 0:r.offsetHeight)||80;t+=a+50;let s="";const o=document.querySelector(".hero"),p=o?o.offsetTop+o.offsetHeight:0;if(t<p){e.forEach(l=>l.classList.remove("active"));return}i.forEach(l=>{if(!l||!l.id)return;const c=l.offsetTop,m=l.offsetHeight;t>=c&&t<c+m&&(s=l.id)}),e.forEach(l=>{l.classList.remove("active"),l.getAttribute("data-section")===s&&l.classList.add("active")})}n(),window.addEventListener("scroll",n)}function I(){w(),document.getElementById("header").innerHTML=v(),document.getElementById("hero").innerHTML=h(),document.getElementById("about-me").innerHTML=g(),document.getElementById("education").innerHTML=f(),document.getElementById("skills").innerHTML=y(),document.getElementById("experience").innerHTML=k(),document.getElementById("projects").innerHTML=b(),document.getElementById("feedback").innerHTML=x(),u(),E(),document.dispatchEvent(new CustomEvent("componentsLoaded")),C(),console.log("✅ Todos os componentes carregados instantaneamente!")}window.openImageModal=j;window.closeImageModal=d;document.addEventListener("DOMContentLoaded",I);
+  `}function w(){const s=document.getElementById("backgroundStars"),e=50;for(let n=0;n<e;n++){const t=document.createElement("div");t.className="background-star",t.style.left=`${Math.random()*100}%`,t.style.top=`${Math.random()*100}%`,t.style.animationDelay=`${Math.random()*4}s`,t.innerHTML="✦",s.appendChild(t)}}function E(s,e){const n=document.getElementById("imageModal"),t=document.getElementById("modalImage"),a=document.getElementById("modalCaption"),i=document.querySelector(".modal-content");i&&(i.style.opacity="0"),n.style.display="flex",t.src=s.src,a.innerHTML=e,t.onload=function(){i&&setTimeout(()=>{i.style.opacity="1"},50),n.scrollTop=0;const o=document.querySelector("header")?document.querySelector("header").offsetHeight:80;n.style.paddingTop=`${o+10}px`},document.body.style.overflow="hidden"}function d(){const s=document.getElementById("imageModal"),e=document.querySelector(".modal-content");e?(e.style.opacity="0",setTimeout(()=>{s.style.display="none",document.body.style.overflow="auto"},200)):(s.style.display="none",document.body.style.overflow="auto")}function j(){const s=document.getElementById("imageModal");s&&(window.onclick=function(e){e.target===s&&d()})}function C(){const s=document.querySelectorAll('section[id], div[id="about-me"], div[id="education"], div[id="skills"], div[id="experience"], div[id="projects"]'),e=document.querySelectorAll(".nav-link");if(s.length===0||e.length===0){console.warn("Elementos não encontrados para o monitoramento de scroll");return}function n(){var r;let t=window.scrollY;const a=((r=document.querySelector(".main-header"))==null?void 0:r.offsetHeight)||80;t+=a+50;let i="";const o=document.querySelector(".hero"),p=o?o.offsetTop+o.offsetHeight:0;if(t<p){e.forEach(l=>l.classList.remove("active"));return}s.forEach(l=>{if(!l||!l.id)return;const c=l.offsetTop,m=l.offsetHeight;t>=c&&t<c+m&&(i=l.id)}),e.forEach(l=>{l.classList.remove("active"),l.getAttribute("data-section")===i&&l.classList.add("active")})}n(),window.addEventListener("scroll",n)}function I(){w(),document.getElementById("header").innerHTML=v(),document.getElementById("hero").innerHTML=h(),document.getElementById("about-me").innerHTML=g(),document.getElementById("education").innerHTML=f(),document.getElementById("skills").innerHTML=y(),document.getElementById("experience").innerHTML=k(),document.getElementById("projects").innerHTML=b(),document.getElementById("feedback").innerHTML=x(),u(),j(),document.dispatchEvent(new CustomEvent("componentsLoaded")),C(),console.log("✅ Todos os componentes carregados instantaneamente!")}window.openImageModal=E;window.closeImageModal=d;document.addEventListener("DOMContentLoaded",I);
