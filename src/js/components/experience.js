@@ -17,10 +17,11 @@ export function createExperience() {
                 <p class="job-title">UI/UX Designer</p>
                 <p class="job-period">November 2022 - Present</p>
                 <ul class="job-responsibilities">
-                  <li>Lead UX research and design for university innovation projects</li>
-                  <li>Conduct user interviews and usability testing sessions</li>
-                  <li>Create wireframes, prototypes, and high-fidelity designs</li>
-                  <li>Collaborate with developers to ensure design implementation</li>
+                  <li>Lead and mentor UX/UI Design processes</li>
+                  <li>Conduct interviews with users and stakeholders</li>
+                  <li>Create wireframes, style guide and high-fidelity designs</li>
+                  <li>Handoff design projects to developers</li>
+                  <li>Collaborate with the team to ensure proper implementation</li>
                 </ul>
               </div>
             </div>
@@ -39,10 +40,10 @@ export function createExperience() {
                 <p class="job-title">UI/UX Designer</p>
                 <p class="job-period">April 2022 - June 2023</p>
                 <ul class="job-responsibilities">
-                  <li>Designed user interfaces for research applications</li>
-                  <li>Created user flows and interactive prototypes</li>
-                  <li>Conducted usability tests and implemented feedback</li>
-                  <li>Collaborated with researchers to translate complex data</li>
+                  <li>Conduct UX research in collaboration with other designers on the team</li>
+                  <li>Transform business requirements into user-centered solutions</li>
+                  <li>Produce responsive wireframes across multiple levels of fidelity</li>
+                  <li>Handoff style guides, user flows, and interactive prototypes to the development team</li>
                 </ul>
               </div>
             </div>
@@ -61,10 +62,10 @@ export function createExperience() {
                 <p class="job-title">UI Designer</p>
                 <p class="job-period">June 2021 - January 2023</p>
                 <ul class="job-responsibilities">
-                  <li>Designed user interfaces for graduation ceremony platform</li>
-                  <li>Created visual identity elements and design system components</li>
-                  <li>Improved user journey and experience for critical app features</li>
-                  <li>Collaborated with developers on implementation</li>
+                  <li>Design user interfaces for graduation ceremony management platform</li>
+                  <li>Create visual identity assets and scalable design system components</li>
+                  <li>Improve user journey and overall experience for high-impact features</li>
+                  <li>Collaborate with developers to ensure cohesive implementation</li>
                 </ul>
               </div>
             </div>
